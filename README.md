@@ -1,6 +1,5 @@
 # RetrofitTutorial
 A simple android application that uses Retrofit library to read data from a REST api.
-This is sample project created for a tutorial published here
 
 The project uses following libraries
 

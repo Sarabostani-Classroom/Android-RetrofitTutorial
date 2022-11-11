@@ -1,5 +1,6 @@
 package com.example.retrofit.network;
 
+import com.example.retrofit.model.Comment;
 import com.example.retrofit.model.RetroPhoto;
 
 import java.util.List;
