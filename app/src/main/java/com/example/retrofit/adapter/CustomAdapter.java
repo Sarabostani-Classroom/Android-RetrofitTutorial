@@ -19,11 +19,13 @@ import java.util.List;
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder> {
 
     private List<RetroPhoto> dataList;
-    private Context context;
+    private Picasso picaso;
 
     public CustomAdapter(Context context,List<RetroPhoto> dataList){
-        this.context = context;
         this.dataList = dataList;
+        Picasso.Builder builder = new Picasso.Builder(context);
+        builder.downloader(new OkHttp3Downloader(context));
+        this.picaso = builder.build();
     }
 
     class CustomViewHolder extends RecyclerView.ViewHolder {
@@ -51,13 +53,11 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
     @Override
     public void onBindViewHolder(CustomViewHolder holder, int position) {
-        holder.txtTitle.setText(dataList.get(position).getTitle());
+        holder.txtTitle.setText(dataList.get(position).title);
 
-        Picasso.Builder builder = new Picasso.Builder(context);
-        builder.downloader(new OkHttp3Downloader(context));
-        builder.build().load(dataList.get(position).getThumbnailUrl())
+        picaso.load(dataList.get(position).thumbnailUrl)
                 .placeholder((R.drawable.ic_launcher_background))
-                .error(R.drawable.ic_launcher_background)
+                .error(R.drawable.ic_launcher_foreground)
                 .into(holder.coverImage);
 
     }

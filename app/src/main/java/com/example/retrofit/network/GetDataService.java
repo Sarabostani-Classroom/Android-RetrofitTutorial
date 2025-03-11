@@ -11,7 +11,7 @@ import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
 public interface GetDataService {
-    @Headers({"X-RapidAPI-key: oiweurju08435u092hjfhds98"})
+    // @Headers({"X-RapidAPI-key: oiweurju08435u092hjfhds98"})
     @GET("/photos")
     Call<List<RetroPhoto>> getAllPhotos();
 

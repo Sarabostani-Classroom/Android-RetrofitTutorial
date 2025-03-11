@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        final String BASE_URL = "https://jsonplaceholder.typicode.com";
+        final String BASE_URL = "https://jsonplaceholder.typicode.com"; // https://jsonplaceholder.typicode.com?key=value
 
         // Volley
         // Singleton pattern
